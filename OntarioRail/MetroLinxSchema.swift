@@ -2,29 +2,15 @@ import Foundation
 
 // Top-level structure representing the entire JSON response
 struct ApiResponse: Codable {
-  let metadata: Metadata
+//  let metadata: Metadata
   let trips: TripsContainer
 
   enum CodingKeys: String, CodingKey {
-    case metadata = "Metadata"
+//    case metadata = "Metadata"
     case trips = "Trips"
   }
 }
 
-// Metadata structure for general response information
-struct Metadata: Codable {
-  let timeStamp: String
-  let errorCode: String
-  let errorMessage: String
-
-  enum CodingKeys: String, CodingKey {
-    case timeStamp = "TimeStamp"
-    case errorCode = "ErrorCode"
-    case errorMessage = "ErrorMessage"
-  }
-}
-
-// Container for the array of trips
 struct TripsContainer: Codable {
   let trip: [Trip]
 
@@ -34,36 +20,37 @@ struct TripsContainer: Codable {
 }
 
 // Detailed trip information
-struct Trip: Codable {
-  let cars: String
-  let tripNumber: String
-  let startTime: String
-  let endTime: String
-  let lineCode: String
-  let routeNumber: String
-  let variantDir: String
-  let display: String?
-  let latitude: Double
-  let longitude: Double
-  let isInMotion: Bool
-  let delaySeconds: Int
-  let course: Double
-  let firstStopCode: String
-  let lastStopCode: String
-  let prevStopCode: String
-  let nextStopCode: String
-  let atStationCode: String?
-  let modifiedDate: String
+struct Trip: Codable & Identifiable & Hashable & CustomStringConvertible
+{
+  var cars: String
+  var id: String
+  var startTime: String
+  var endTime: String
+  var lineCode: String
+  var routeNumber: String
+  var variantDir: String
+  var description: String
+  var latitude: Double
+  var longitude: Double
+  var isInMotion: Bool
+  var delaySeconds: Int
+  var course: Double
+  var firstStopCode: String
+  var lastStopCode: String
+  var prevStopCode: String
+  var nextStopCode: String
+  var atStationCode: String?
+  var modifiedDate: String
 
   enum CodingKeys: String, CodingKey {
     case cars = "Cars"
-    case tripNumber = "TripNumber"
+    case id = "TripNumber"
     case startTime = "StartTime"
     case endTime = "EndTime"
     case lineCode = "LineCode"
     case routeNumber = "RouteNumber"
     case variantDir = "VariantDir"
-    case display = "Display"
+    case description = "Display"
     case latitude = "Latitude"
     case longitude = "Longitude"
     case isInMotion = "IsInMotion"
@@ -75,5 +62,10 @@ struct Trip: Codable {
     case nextStopCode = "NextStopCode"
     case atStationCode = "AtStationCode"
     case modifiedDate = "ModifiedDate"
+  }
+}
+extension Trip: Equatable {
+  static func == (lhs: Trip, rhs: Trip) -> Bool {
+    return lhs.id == rhs.id
   }
 }

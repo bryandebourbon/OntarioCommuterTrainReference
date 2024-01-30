@@ -17,10 +17,10 @@ class UUIDFetcher<T: Codable>: ObservableObject {
   }
 
   func fetch() async {
-    print("Starting to fetch...")
+    //print("Starting to fetch...")
 
     guard let url = URL(string: urlString) else {
-      print("Invalid URL")
+      //print("Invalid URL")
       return
     }
 
@@ -32,7 +32,7 @@ class UUIDFetcher<T: Codable>: ObservableObject {
 
       }
     } catch {
-      print("Error fetching trains: \(error.localizedDescription)")
+      //print("Error fetching trains: \(error.localizedDescription)")
     }
     @Sendable func uuidCompletion(response: ApiResponse) {
       let mappedTrains = response.trips.trips.map {

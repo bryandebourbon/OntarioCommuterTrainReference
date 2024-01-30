@@ -45,15 +45,15 @@ struct SlidingToastOverlay<Content: View>: View {
   var drag: some Gesture {
     DragGesture()
       .onChanged { value in
-        print(value)
+        //print(value)
         self.startLocation = value.location
       }
       .onEnded { value in
-        print(value)
-        self.lastLocation = CGPoint(x: 0, y: 800 - value.location.y)
+        //print(value)
+        self.lastLocation = CGPoint(x: 0, y: 500 - value.location.y)
       }
       .updating($currentLocation) { value, state, transaction in
-        print(value.startLocation.y + value.location.y)
+        //print(value.startLocation.y + value.location.y)
         state = CGPoint(x: 0, y: value.startLocation.y - value.location.y)
         transaction = Transaction(animation: .easeInOut)
       }
@@ -96,7 +96,7 @@ struct SlidingToastOverlay<Content: View>: View {
 //          #endif
           content()
         }
-      }.frame(height: 100 + lastLocation.y + currentLocation.y)
+      }.frame(height: 300 + lastLocation.y + currentLocation.y)
     }
     .gesture(drag)
     .ignoresSafeArea()
@@ -107,8 +107,8 @@ struct SlidingToastOverlay<Content: View>: View {
 struct SlidingToastOverlay_Previews: PreviewProvider {
   static var previews: some View {
     SlidingToastOverlay {
-      Rectangle()
-//      EmptyView()
+//      Rectangle()
+      EmptyView()
     }
   }
 }

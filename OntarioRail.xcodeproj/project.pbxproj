@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E4C1CDB2B6984D4002ADB22 /* RegionalTrainLinePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C1CDA2B6984D4002ADB22 /* RegionalTrainLinePicker.swift */; };
 		2E52F5322B61DC3A005D089A /* UUIDWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52F5312B61DC3A005D089A /* UUIDWrapper.swift */; };
 		2E760DF62B67422E00851964 /* SlidingToastOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E760DF52B67422E00851964 /* SlidingToastOverlay.swift */; };
 		2E9443B72B5B764700D24978 /* OntarioRailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9443B62B5B764700D24978 /* OntarioRailApp.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E4C1CDA2B6984D4002ADB22 /* RegionalTrainLinePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionalTrainLinePicker.swift; sourceTree = "<group>"; };
 		2E52F5312B61DC3A005D089A /* UUIDWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDWrapper.swift; sourceTree = "<group>"; };
 		2E760DF52B67422E00851964 /* SlidingToastOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingToastOverlay.swift; sourceTree = "<group>"; };
 		2E9443B32B5B764700D24978 /* OntarioRail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OntarioRail.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 				2E9443D92B60515F00D24978 /* UUIDPickerView.swift */,
 				2E9443B82B5B764700D24978 /* TrainMapView.swift */,
 				2E760DF52B67422E00851964 /* SlidingToastOverlay.swift */,
+				2E4C1CDA2B6984D4002ADB22 /* RegionalTrainLinePicker.swift */,
 				2E9443B62B5B764700D24978 /* OntarioRailApp.swift */,
 				2E9443BC2B5B764900D24978 /* Preview Content */,
 			);
@@ -171,6 +174,7 @@
 				2E9443B72B5B764700D24978 /* OntarioRailApp.swift in Sources */,
 				2E9443DA2B60515F00D24978 /* UUIDPickerView.swift in Sources */,
 				2E760DF62B67422E00851964 /* SlidingToastOverlay.swift in Sources */,
+				2E4C1CDB2B6984D4002ADB22 /* RegionalTrainLinePicker.swift in Sources */,
 				2E9443D82B604EA400D24978 /* TrainMapView.swift in Sources */,
 				2E9443D62B60370200D24978 /* MetroLinxSchema.swift in Sources */,
 			);

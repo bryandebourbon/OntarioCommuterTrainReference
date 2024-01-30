@@ -23,7 +23,8 @@ struct ContentView: View {
       TrainMapView(fetcher: fetcher)
       SlidingToastOverlay {
         VStack {
-          UUIDPickerView(selection: fetcher).padding()
+//          UUIDPickerView(selection: fetcher).padding()
+          RegionalTrainLinePicker().padding()
           if let selectedTrain {
             //            Text("\(selectedTrain.description)")
             Text("Previous Stop: \(selectedTrain.prevStop)")

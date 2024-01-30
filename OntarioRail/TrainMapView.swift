@@ -1,33 +1,46 @@
 import MapKit
 import SwiftUI
 
-struct MapTrainView: View {
-  @Binding var train: Trip?
+struct TrainMapView: View {
+
+  @ObservedObject var fetcher: UUIDFetcher<ApiResponse>
+
+  var train: UUIDWrapper? {
+    return fetcher.cachedUUIDs[fetcher.selectedUUID]
+  }
+
+  var region: MKCoordinateRegion {
+    return MKCoordinateRegion(
+      center: train?.currentLocation
+        ?? CLLocationCoordinate2D(latitude: 43.644535, longitude: -79.490000),
+      span: MKCoordinateSpan(
+        latitudeDelta: 0, longitudeDelta: 0) //  700000
+    )
+  }
 
   var body: some View {
-    // Attempt to unwrap all optionals
     if let unwrappedTrain = train {
-      // All values are present, render the map
-      mapWithMarker(
-        title: unwrappedTrain.description, latitude: unwrappedTrain.latitude,
-        longitude: unwrappedTrain.longitude)
-    } else {
-      // Fallback content when one or more values are missing
-      Text("Location data not available.")
+      Map(
+        bounds:
+          MapCameraBounds(
+            centerCoordinateBounds: region,
+            minimumDistance: 100000
+          )
+      ) {
+        Marker(
+          unwrappedTrain.description,
+          coordinate: unwrappedTrain.currentLocation
+        )
+      }
     }
+
   }
 
-  // Private view builder function for map
-  private func mapWithMarker(title: String, latitude: Double, longitude: Double) -> some View {
-    Map(
-//      bounds: MapCameraBounds(centerCoordinateBounds:MKMapRect()
-//        )
-    ) {
-      Marker(
-        title,
-        coordinate:
-          CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-      )
+  private var trains: [UUIDWrapper] {
+    if let selectedTrain = fetcher.cachedUUIDs[fetcher.selectedUUID] {
+      return [selectedTrain]
     }
+    return []
   }
+
 }

@@ -4,36 +4,37 @@ import SwiftUI
 
 @main
 struct OntarioRailApp: App {
-
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      ZStack {
+        ContentView()
+      }
     }
   }
 }
 
 struct ContentView: View {
-  @StateObject var viewModel = TrainViewModel()
+  @StateObject var fetcher = UUIDFetcher<ApiResponse>()
+  var selectedTrain: UUIDWrapper? {
+    return fetcher.cachedUUIDs[fetcher.selectedUUID]
+  }
   var body: some View {
     ZStack(alignment: .bottom) {
-
-      MapTrainView(
-        train: $viewModel.selectedTrain
-      )
-
-      VStack {
-        if !viewModel.fetchedTrains.isEmpty {
-          TrainPicker(viewModel: viewModel)
-        } else {
-          Text("No trains available")
+      TrainMapView(fetcher: fetcher)
+      SlidingToastOverlay {
+        VStack {
+          UUIDPickerView(selection: fetcher).padding()
+          if let selectedTrain {
+            //            Text("\(selectedTrain.description)")
+            Text("Previous Stop: \(selectedTrain.prevStop)")
+            Text("Next Stop: \(selectedTrain.nextStop)")
+            Text("Final Stop: \(selectedTrain.finalStop)")
+          }
         }
       }
-
     }
   }
-
 }
-
 #Preview{
   ContentView()
 }

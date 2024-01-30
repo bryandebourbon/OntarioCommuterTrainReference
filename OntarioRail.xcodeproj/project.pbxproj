@@ -7,33 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E52F5322B61DC3A005D089A /* UUIDWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52F5312B61DC3A005D089A /* UUIDWrapper.swift */; };
+		2E760DF62B67422E00851964 /* SlidingToastOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E760DF52B67422E00851964 /* SlidingToastOverlay.swift */; };
 		2E9443B72B5B764700D24978 /* OntarioRailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9443B62B5B764700D24978 /* OntarioRailApp.swift */; };
 		2E9443B92B5B764700D24978 /* TrainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9443B82B5B764700D24978 /* TrainMapView.swift */; };
 		2E9443BB2B5B764900D24978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E9443BA2B5B764900D24978 /* Assets.xcassets */; };
 		2E9443BE2B5B764900D24978 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E9443BD2B5B764900D24978 /* Preview Assets.xcassets */; };
-		2E9443C82B5C272200D24978 /* MetroLinxFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9443C72B5C272200D24978 /* MetroLinxFetcher.swift */; };
+		2E9443C82B5C272200D24978 /* UUIDFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9443C72B5C272200D24978 /* UUIDFetcher.swift */; };
 		2E9443CE2B601F5F00D24978 /* MetroLinxSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9443CD2B601F5F00D24978 /* MetroLinxSchema.swift */; };
 		2E9443D22B6024C700D24978 /* Sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E9443D12B6024C700D24978 /* Sample.json */; };
 		2E9443D62B60370200D24978 /* MetroLinxSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9443D52B60370200D24978 /* MetroLinxSchema.swift */; };
 		2E9443D82B604EA400D24978 /* TrainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9443D72B604EA400D24978 /* TrainMapView.swift */; };
-		2E9443DA2B60515F00D24978 /* StringPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9443D92B60515F00D24978 /* StringPickerView.swift */; };
-		2E9443DC2B609D1100D24978 /* TrainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9443DB2B609D1100D24978 /* TrainViewModel.swift */; };
+		2E9443DA2B60515F00D24978 /* UUIDPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9443D92B60515F00D24978 /* UUIDPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E52F5312B61DC3A005D089A /* UUIDWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDWrapper.swift; sourceTree = "<group>"; };
+		2E760DF52B67422E00851964 /* SlidingToastOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingToastOverlay.swift; sourceTree = "<group>"; };
 		2E9443B32B5B764700D24978 /* OntarioRail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OntarioRail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9443B62B5B764700D24978 /* OntarioRailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OntarioRailApp.swift; sourceTree = "<group>"; };
 		2E9443B82B5B764700D24978 /* TrainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainMapView.swift; sourceTree = "<group>"; };
 		2E9443BA2B5B764900D24978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E9443BD2B5B764900D24978 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2E9443C72B5C272200D24978 /* MetroLinxFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroLinxFetcher.swift; sourceTree = "<group>"; };
+		2E9443C72B5C272200D24978 /* UUIDFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDFetcher.swift; sourceTree = "<group>"; };
 		2E9443C92B5C29F600D24978 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E9443CD2B601F5F00D24978 /* MetroLinxSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroLinxSchema.swift; sourceTree = "<group>"; };
 		2E9443D12B6024C700D24978 /* Sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Sample.json; sourceTree = "<group>"; };
 		2E9443D52B60370200D24978 /* MetroLinxSchema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetroLinxSchema.swift; path = OntarioRail/MetroLinxSchema.swift; sourceTree = SOURCE_ROOT; };
 		2E9443D72B604EA400D24978 /* TrainMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrainMapView.swift; path = OntarioRail/TrainMapView.swift; sourceTree = SOURCE_ROOT; };
-		2E9443D92B60515F00D24978 /* StringPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringPickerView.swift; sourceTree = "<group>"; };
-		2E9443DB2B609D1100D24978 /* TrainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewModel.swift; sourceTree = "<group>"; };
+		2E9443D92B60515F00D24978 /* UUIDPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +52,6 @@
 		2E9443AA2B5B764700D24978 = {
 			isa = PBXGroup;
 			children = (
-				2E9443D92B60515F00D24978 /* StringPickerView.swift */,
 				2E9443B52B5B764700D24978 /* OntarioRail */,
 				2E9443B42B5B764700D24978 /* Products */,
 			);
@@ -67,14 +68,16 @@
 		2E9443B52B5B764700D24978 /* OntarioRail */ = {
 			isa = PBXGroup;
 			children = (
+				2E9443BA2B5B764900D24978 /* Assets.xcassets */,
 				2E9443C92B5C29F600D24978 /* Info.plist */,
 				2E9443D12B6024C700D24978 /* Sample.json */,
 				2E9443CD2B601F5F00D24978 /* MetroLinxSchema.swift */,
-				2E9443C72B5C272200D24978 /* MetroLinxFetcher.swift */,
+				2E9443C72B5C272200D24978 /* UUIDFetcher.swift */,
+				2E52F5312B61DC3A005D089A /* UUIDWrapper.swift */,
+				2E9443D92B60515F00D24978 /* UUIDPickerView.swift */,
 				2E9443B82B5B764700D24978 /* TrainMapView.swift */,
+				2E760DF52B67422E00851964 /* SlidingToastOverlay.swift */,
 				2E9443B62B5B764700D24978 /* OntarioRailApp.swift */,
-				2E9443DB2B609D1100D24978 /* TrainViewModel.swift */,
-				2E9443BA2B5B764900D24978 /* Assets.xcassets */,
 				2E9443BC2B5B764900D24978 /* Preview Content */,
 			);
 			path = OntarioRail;
@@ -161,13 +164,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E52F5322B61DC3A005D089A /* UUIDWrapper.swift in Sources */,
 				2E9443CE2B601F5F00D24978 /* MetroLinxSchema.swift in Sources */,
-				2E9443C82B5C272200D24978 /* MetroLinxFetcher.swift in Sources */,
+				2E9443C82B5C272200D24978 /* UUIDFetcher.swift in Sources */,
 				2E9443B92B5B764700D24978 /* TrainMapView.swift in Sources */,
 				2E9443B72B5B764700D24978 /* OntarioRailApp.swift in Sources */,
-				2E9443DA2B60515F00D24978 /* StringPickerView.swift in Sources */,
+				2E9443DA2B60515F00D24978 /* UUIDPickerView.swift in Sources */,
+				2E760DF62B67422E00851964 /* SlidingToastOverlay.swift in Sources */,
 				2E9443D82B604EA400D24978 /* TrainMapView.swift in Sources */,
-				2E9443DC2B609D1100D24978 /* TrainViewModel.swift in Sources */,
 				2E9443D62B60370200D24978 /* MetroLinxSchema.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

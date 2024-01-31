@@ -17,7 +17,7 @@ struct RegionalTrainLinePicker: View {
 
     var body: some View {
       VStack {
-        Picker("Flavor", selection: $selectedLine) {
+        Picker("TrainLine", selection: $selectedLine) {
           ForEach(TrainLine.allCases) { trainLine in
             Text(trainLine.rawValue.uppercased())
 //              .overlay(

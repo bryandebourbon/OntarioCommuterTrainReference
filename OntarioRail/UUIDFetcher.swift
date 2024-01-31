@@ -44,7 +44,8 @@ class UUIDFetcher<T: Codable>: ObservableObject {
           currentLocation: CLLocationCoordinate2D(
             latitude: $0.latitude,
             longitude: $0.longitude
-          )
+          ),
+          trip: $0
         )
       }
 

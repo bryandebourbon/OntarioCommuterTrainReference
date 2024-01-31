@@ -11,10 +11,15 @@ struct TrainMapView: View {
 
   var region: MKCoordinateRegion {
     return MKCoordinateRegion(
-      center: train?.currentLocation
-        ?? CLLocationCoordinate2D(latitude: 43.644535, longitude: -79.490000),
+      center:  //train?.currentLocation ??
+        CLLocationCoordinate2D(
+          latitude: (train?.currentLocation.latitude ?? 0) - 0.15,
+          longitude: (train?.currentLocation.longitude ?? 0) + 0.0
+        ),
       span: MKCoordinateSpan(
-        latitudeDelta: 0, longitudeDelta: 0) //  700000
+        latitudeDelta: 0,
+        longitudeDelta: 0
+      )  //  700000
     )
   }
 

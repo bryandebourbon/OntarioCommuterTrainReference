@@ -53,9 +53,11 @@ struct SlidingToastOverlay<Content: View>: View {
         self.lastLocation = CGPoint(x: 0, y: 500 - value.location.y)
       }
       .updating($currentLocation) { value, state, transaction in
-        //print(value.startLocation.y + value.location.y)
-        state = CGPoint(x: 0, y: value.startLocation.y - value.location.y)
-        transaction = Transaction(animation: .easeInOut)
+        print(value.startLocation.y)
+//        if (value.startLocation.y > 600) {
+          state = CGPoint(x: 0, y: value.startLocation.y - value.location.y)
+          transaction = Transaction(animation: .easeInOut)
+//        }
       }
   }
 
@@ -86,17 +88,10 @@ struct SlidingToastOverlay<Content: View>: View {
             maxWidth: .infinity,
             maxHeight: 60)
 
-//          #if DEBUG
-//            Rectangle()
-//              .foregroundColor(Color.blue)
-//              .frame(minWidth: 0,
-//                     maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-//          #else
-//            Spacer()
-//          #endif
+
           content()
         }
-      }.frame(height: 300 + lastLocation.y + currentLocation.y)
+      }.frame(height: 300 + lastLocation.y + currentLocation.y )
     }
     .gesture(drag)
     .ignoresSafeArea()

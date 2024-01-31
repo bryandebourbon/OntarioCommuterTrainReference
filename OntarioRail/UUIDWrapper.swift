@@ -10,6 +10,7 @@ struct UUIDWrapper: Identifiable & Equatable & Hashable & CustomStringConvertibl
   var prevStop:String
   var nextStop: String
   var currentLocation: CLLocationCoordinate2D
+  var trip:Trip
 
   static func == (
     lhs: UUIDWrapper,

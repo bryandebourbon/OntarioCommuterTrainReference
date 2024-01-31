@@ -18,18 +18,31 @@ struct ContentView: View {
   var selectedTrain: UUIDWrapper? {
     return fetcher.cachedUUIDs[fetcher.selectedUUID]
   }
+
+  func reflectingTripProperties() -> [(name: String, value: String)] {
+    guard let train = selectedTrain?.trip else { return [] }
+    let mirror = Mirror(reflecting: train)
+    return mirror.children.compactMap { child in
+      guard let propertyName = child.label else { return nil }
+      let propertyValue = String(describing: child.value)
+      return (name: propertyName, value: propertyValue)
+    }
+  }
+
   var body: some View {
     ZStack(alignment: .bottom) {
       TrainMapView(fetcher: fetcher)
       SlidingToastOverlay {
         VStack {
-//          UUIDPickerView(selection: fetcher).padding()
+
           RegionalTrainLinePicker().padding()
-          if let selectedTrain {
-            //            Text("\(selectedTrain.description)")
-            Text("Previous Stop: \(selectedTrain.prevStop)")
-            Text("Next Stop: \(selectedTrain.nextStop)")
-            Text("Final Stop: \(selectedTrain.finalStop)")
+          UUIDPickerView(selection: fetcher).padding()
+          if let _ = selectedTrain {
+            List {
+              ForEach(reflectingTripProperties(), id: \.name) { property in
+                Text("\(property.name): \(property.value)")
+              }
+            }
           }
         }
       }

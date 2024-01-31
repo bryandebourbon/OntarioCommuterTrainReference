@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E4C1CDB2B6984D4002ADB22 /* RegionalTrainLinePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C1CDA2B6984D4002ADB22 /* RegionalTrainLinePicker.swift */; };
+		2E4C1CDD2B69FF9F002ADB22 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E4C1CDC2B69FF9F002ADB22 /* Info.plist */; };
 		2E52F5322B61DC3A005D089A /* UUIDWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E52F5312B61DC3A005D089A /* UUIDWrapper.swift */; };
 		2E760DF62B67422E00851964 /* SlidingToastOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E760DF52B67422E00851964 /* SlidingToastOverlay.swift */; };
 		2E9443B72B5B764700D24978 /* OntarioRailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9443B62B5B764700D24978 /* OntarioRailApp.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		2E4C1CDA2B6984D4002ADB22 /* RegionalTrainLinePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionalTrainLinePicker.swift; sourceTree = "<group>"; };
+		2E4C1CDC2B69FF9F002ADB22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E52F5312B61DC3A005D089A /* UUIDWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDWrapper.swift; sourceTree = "<group>"; };
 		2E760DF52B67422E00851964 /* SlidingToastOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingToastOverlay.swift; sourceTree = "<group>"; };
 		2E9443B32B5B764700D24978 /* OntarioRail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OntarioRail.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,7 +34,6 @@
 		2E9443BA2B5B764900D24978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E9443BD2B5B764900D24978 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E9443C72B5C272200D24978 /* UUIDFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDFetcher.swift; sourceTree = "<group>"; };
-		2E9443C92B5C29F600D24978 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E9443CD2B601F5F00D24978 /* MetroLinxSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroLinxSchema.swift; sourceTree = "<group>"; };
 		2E9443D12B6024C700D24978 /* Sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Sample.json; sourceTree = "<group>"; };
 		2E9443D52B60370200D24978 /* MetroLinxSchema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetroLinxSchema.swift; path = OntarioRail/MetroLinxSchema.swift; sourceTree = SOURCE_ROOT; };
@@ -71,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				2E9443BA2B5B764900D24978 /* Assets.xcassets */,
-				2E9443C92B5C29F600D24978 /* Info.plist */,
 				2E9443D12B6024C700D24978 /* Sample.json */,
 				2E9443CD2B601F5F00D24978 /* MetroLinxSchema.swift */,
 				2E9443C72B5C272200D24978 /* UUIDFetcher.swift */,
@@ -82,6 +82,7 @@
 				2E4C1CDA2B6984D4002ADB22 /* RegionalTrainLinePicker.swift */,
 				2E9443B62B5B764700D24978 /* OntarioRailApp.swift */,
 				2E9443BC2B5B764900D24978 /* Preview Content */,
+				2E4C1CDC2B69FF9F002ADB22 /* Info.plist */,
 			);
 			path = OntarioRail;
 			sourceTree = "<group>";
@@ -154,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4C1CDD2B69FF9F002ADB22 /* Info.plist in Resources */,
 				2E9443BE2B5B764900D24978 /* Preview Assets.xcassets in Resources */,
 				2E9443BB2B5B764900D24978 /* Assets.xcassets in Resources */,
 				2E9443D22B6024C700D24978 /* Sample.json in Resources */,

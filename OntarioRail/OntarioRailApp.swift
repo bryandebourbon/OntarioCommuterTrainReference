@@ -29,14 +29,17 @@ struct ContentView: View {
     }
   }
 
+  @State var selectedLine: TrainLine = .BL
   var body: some View {
+
+
     ZStack(alignment: .bottom) {
       TrainMapView(fetcher: fetcher)
       SlidingToastOverlay {
         VStack {
 
-          RegionalTrainLinePicker().padding()
-          UUIDPickerView(selection: fetcher).padding()
+          RegionalTrainLinePicker(selectedLine: $selectedLine).padding()
+          UUIDPickerView(selection: fetcher, selectedLine: selectedLine).padding()
           if let _ = selectedTrain {
             List {
               ForEach(reflectingTripProperties(), id: \.name) { property in

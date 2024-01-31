@@ -45,7 +45,8 @@ class UUIDFetcher<T: Codable>: ObservableObject {
             latitude: $0.latitude,
             longitude: $0.longitude
           ),
-          trip: $0
+          trip: $0, 
+          lineCode: TrainLine(rawValue: $0.lineCode) ?? TrainLine.BL
         )
       }
 

@@ -2,7 +2,7 @@ import SwiftUI
 
 enum TrainLine: String, CaseIterable, Identifiable {
   case BL
-  case KT
+  case KT = "GT"
   case LE
   case LW
   case MI
@@ -13,23 +13,23 @@ enum TrainLine: String, CaseIterable, Identifiable {
 }
 
 struct RegionalTrainLinePicker: View {
-  @State private var selectedLine: TrainLine = .BL
+  @Binding var selectedLine: TrainLine
 
-    var body: some View {
-      VStack {
-        Picker("TrainLine", selection: $selectedLine) {
-          ForEach(TrainLine.allCases) { trainLine in
-            Text(trainLine.rawValue.uppercased())
-//              .overlay(
-//                Color("\(trainLine.rawValue.uppercased())")
-//              )
-          }
+  var body: some View {
+    VStack {
+      Picker("TrainLine", selection: $selectedLine) {
+        ForEach(TrainLine.allCases) { trainLine in
+          Text(trainLine.rawValue.uppercased())
+          //              .overlay(
+          //                Color("\(trainLine.rawValue.uppercased())")
+          //              )
         }
       }
-      .pickerStyle(.segmented)
     }
+    .pickerStyle(.segmented)
+  }
 }
 
-#Preview {
-    RegionalTrainLinePicker()
+#Preview{
+  RegionalTrainLinePicker(selectedLine: .constant(.BL))
 }

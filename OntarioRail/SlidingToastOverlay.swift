@@ -34,30 +34,35 @@ enum DragState {
 }
 
 struct SlidingToastOverlay<Content: View>: View {
-  @State private var startLocation = CGPoint(x: 0, y: 0)
-  @GestureState private var currentLocation = CGPoint(x: 0, y: 0)
-  @State private var lastLocation = CGPoint(x: 0, y: 0)
-  @State private var viewState = CGSize.zero
   @GestureState private var dragState = DragState.inactive
+  @State private var viewYPos = 600.0
 
   var content: () -> Content
 
   var drag: some Gesture {
     DragGesture()
-      .onChanged { value in
-        //print(value)
-        self.startLocation = value.location
+      .updating($dragState) { delta, state, transaction in
+
+        state =
+          .dragging(translation: delta.startLocation.y + delta.location.y)
+        print("delta.startLocation.y \(delta.startLocation.y)  delta.location.y \(delta.location.y)")
+      // the location numbers are relative the point of contact with the screen, not relative to origin
+        //        transaction = Transaction(animation: .easeIn)
       }
       .onEnded { value in
-        //print(value)
-        self.lastLocation = CGPoint(x: 0, y: 500 - value.location.y)
-      }
-      .updating($currentLocation) { value, state, transaction in
-        print(value.startLocation.y)
-//        if (value.startLocation.y > 600) {
-          state = CGPoint(x: 0, y: value.startLocation.y - value.location.y)
-          transaction = Transaction(animation: .easeInOut)
-//        }
+        //        print("onEnded")
+        //        let currHandleYPos = abs(self.viewYPos)
+        //        let newYPos = abs(value.location.y)
+        //        let delta = currHandleYPos - newYPos
+        //        print("delta: \(delta) currHandleYPos: \(currHandleYPos) newYPos: \(newYPos)")
+        //        print(value)
+        //        withAnimation(.easeOut) {
+        //          if currHandleYPos <= newYPos {
+        //            self.viewYPos = newYPos
+        //          } else {
+        //            self.viewYPos = newYPos - delta
+        //          }
+        //        }
       }
   }
 
@@ -69,31 +74,16 @@ struct SlidingToastOverlay<Content: View>: View {
           .fill(.white)
           .opacity(0.95)
           .shadow(radius: 10)
-
-        VStack {
-          ZStack(alignment: .center) {
-            Rectangle().fill(.clear)
-            RoundedRectangle(
-              cornerRadius: 30
-            )
-            .fill(.black)
-            .opacity(0.5)
-            .frame(
-              width: 100,
-              height: 10)
-            //.shadow(radius: dragState.isActive ? 8 : 0)
-            //.overlay(dragState.isDragging ? Circle().stroke(Color.white, lineWidth: 2) : nil)
-          }
-          .frame(
-            maxWidth: .infinity,
-            maxHeight: 60)
-
-
-          content()
-        }
-      }.frame(height: 300 + lastLocation.y + currentLocation.y )
+        RoundedRectangle(cornerRadius: 30)
+          .fill(.black)
+          .opacity(0.5)
+          .frame(width: 100, height: 10)
+          .padding()
+        content()
+          .padding()
+      }.frame(height: 550 - dragState.translation)
+        .gesture(drag)
     }
-    .gesture(drag)
     .ignoresSafeArea()
   }
 
@@ -102,7 +92,7 @@ struct SlidingToastOverlay<Content: View>: View {
 struct SlidingToastOverlay_Previews: PreviewProvider {
   static var previews: some View {
     SlidingToastOverlay {
-//      Rectangle()
+      //      Rectangle()
       EmptyView()
     }
   }

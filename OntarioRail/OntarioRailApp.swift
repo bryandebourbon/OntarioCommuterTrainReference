@@ -29,7 +29,7 @@ struct ContentView: View {
     }
   }
 
-  @State var selectedLine: TrainLine = .BL
+  @State var selectedLine: TrainLine = .KT
   var body: some View {
 
 
@@ -38,8 +38,8 @@ struct ContentView: View {
       SlidingToastOverlay {
         VStack {
 
-          RegionalTrainLinePicker(selectedLine: $selectedLine).padding()
-          UUIDPickerView(selection: fetcher, selectedLine: selectedLine).padding()
+          RegionalTrainLinePicker(selectedLine: $selectedLine)
+          UUIDPickerView(selection: fetcher, selectedLine: selectedLine)
           if let _ = selectedTrain {
             List {
               ForEach(reflectingTripProperties(), id: \.name) { property in
@@ -47,7 +47,7 @@ struct ContentView: View {
               }
             }
           }
-        }
+        }.padding()
       }
     }
   }
